@@ -7,16 +7,41 @@
 //
 
 #import "AppDelegate.h"
+#import "MenuViewController.h"
+#import "MissionViewController.h"
+#import "RankViewController.h"
+#import "MessageViewController.h"
+#import "IndividualCenterViewController.h"
+#import "NewMessageViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)initRootViewControoler{
+    //任务列表
+    MissionViewController *missionViewController = [[MissionViewController alloc] initWithNibName:@"MissionViewController" bundle:nil];
+    UINavigationController *navMission = [[UINavigationController alloc] initWithRootViewController:missionViewController];
+    //排行榜
+    RankViewController *rankViewController = [[RankViewController alloc] initWithNibName:@"RankViewController" bundle:nil];
+    UINavigationController *navRank = [[UINavigationController alloc] initWithRootViewController:rankViewController];
+    //消息列表
+    MessageViewController *messageViewController = [[MessageViewController alloc] initWithNibName:@"MessageViewController" bundle:nil];
+    UINavigationController *navMessage = [[UINavigationController alloc] initWithRootViewController:messageViewController];
+    //个人中心
+    IndividualCenterViewController *individualCenterViewController = [[IndividualCenterViewController alloc] initWithNibName:@"IndividualCenterViewController" bundle:nil];
+    UINavigationController *navIndividualCenter = [[UINavigationController alloc] initWithRootViewController:individualCenterViewController];
+    
+    
+    
+    
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
